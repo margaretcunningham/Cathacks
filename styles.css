@@ -31,12 +31,14 @@
     position: fixed;
     top: 50%;
     margin-top: -100px;
+    cursor: pointer;
 }
 
 .right-center-block {
     position: fixed;
     top: 50%;
     left:100%;
+    cursor: pointer;
     margin-left: -50px;
     margin-top: -100px;
 }
