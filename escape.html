@@ -5,10 +5,14 @@
 <html>
 <body>
     <div class="left-center-block">
-        <button id="leftBtn">Left</button>    
+        <a id="leftBtn">
+            <img style = "width: 30px;" src = "pointLeft.png"></img> 
+        </a> 
     </div>
-    <div class="right-center-block">
-        <button id="rightBtn">Right</button>    
+    <div class="right-center-block"> 
+        <a id="rightBtn">
+            <img style = "width: 30px;" src = "pointRight.png"></img> 
+        </a>  
     </div>
 
     <script>
@@ -24,18 +28,22 @@
 
                 case 2:
                     document.body.style.backgroundImage = "url('image2.jpeg')";
+                    enRoom2();
                     break;
 
                 case 3: 
                     document.body.style.backgroundImage = "url('image1.jpeg')";
+                    enRoom3();
                     break;
 
                 case 4:
                     document.body.style.backgroundImage = "url('image0.jpeg')";
+                    enRoom4();
                     break;
             }
         }
         function enRoom1(){
+
         }
         function enRoom2(){
 
@@ -110,4 +118,3 @@
     </script> -->
 
 </body>
-</html>
