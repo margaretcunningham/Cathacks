@@ -43,6 +43,14 @@
     margin-top: -100px;
 }
 
+.right-bottom-block {
+    position: fixed;
+    top: 100%;
+    left:100%;
+    cursor: pointer;
+    margin-left: -90px;
+    margin-top: -100px;
+}
 .button {
     border: none;
     color: white;

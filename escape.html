@@ -15,10 +15,29 @@
         </a>  
     </div>
 
+    <div class="right-bottom-block"> 
+        <a id="inventoryBtn">
+            <img style = "width: 90px;" src = "box (1).png"></img> 
+        </a>  
+    </div>
+
+
+    <div id="inventory" class="popModal">
+
+        <div class="popModalContent">
+          <span class="close">&times;</span>
+          <p>Inventory Goes Here</p>
+        </div>
+      
+    </div>
+
     <script>
         var room = 1;
         var left = document.getElementById("leftBtn");
         var right = document.getElementById("rightBtn");
+        var inv = document.getElementById("inventoryBtn");
+        var span = document.getElementsByClassName("close")[0];
+        var invModal = document.getElementById("inventory");
         function roomChange(){
             switch (room){
                 case 1: 
@@ -64,6 +83,17 @@
             if (room<4){
                 room++;
                 roomChange();
+            }
+        }
+        inv.onclick = function() {
+            invModal.style.display = "block";
+        }
+        span.onclick = function() {
+            invModal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == invModal) {
+                invModal.style.display = "none";
             }
         }
 
