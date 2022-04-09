@@ -1,5 +1,5 @@
-<!doctype html>
-<!--Code By WebDevTrick (https://webdevtrick.com)-->
+﻿<!doctype html>
+
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -9,7 +9,7 @@
 	canvas {
 		display: block;
 		position: absolute;
-		border: 5px solid  #009BFF;
+		border: 5px solid  #000000;
 		margin: auto;
 		top: 0;
 		bottom: 0;
@@ -21,8 +21,8 @@
 <body>
 <script>
 var
-COLS = 26,
-ROWS = 26,
+COLS = 30,
+ROWS = 30,
 EMPTY = 0,
 SNAKE = 1,
 FRUIT = 2,
@@ -239,13 +239,13 @@ function draw() {
 			
 			switch (grid.get(x, y)) {
 				case EMPTY:
-					ctx.fillStyle = "#fff";
+					ctx.fillStyle = "#87CEEB";
 					break;
 				case SNAKE:
 					ctx.fillStyle = "#333";
 					break;
 				case FRUIT:
-					ctx.fillStyle = "#009BFF";
+					ctx.fillStyle = "#A52A2A";
 					break;
 			}
 			ctx.fillRect(x*tw, y*th, tw, th);
