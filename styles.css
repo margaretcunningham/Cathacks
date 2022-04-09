@@ -1,14 +1,30 @@
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.arcade {
+    background-image: url("arcade.jpeg");
+}
 .center-block {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
     height: 200px;
-    width: 290px;
+    width: 400px;
     border-style: solid;
-    background-color: grey;
     border-color:black;
     position: fixed;
     top: 50%;
     left: 50%;
-    margin-top: -150px;
-    margin-left: -130px;
+    margin-top: -100px;
+    margin-left: -200px;
 }
 
 .left-center-block {
@@ -18,10 +34,35 @@
     cursor: pointer;
 }
 
+.left-center-dialog {
+    position: fixed;
+    top: 30%;
+    left: 35%;
+    margin-top: -100px;
+    cursor: pointer;
+}
+
+.left-center-textbox {
+    position: fixed;
+    top: 40%;
+    left: 40%;
+    margin-top: -100px;
+    cursor: pointer;
+}
+
 .right-center-block {
     position: fixed;
     top: 50%;
     left:100%;
+    cursor: pointer;
+    margin-left: -50px;
+    margin-top: -100px;
+}
+
+.right-next-button {
+    position: fixed;
+    top: 50%;
+    left:50%;
     cursor: pointer;
     margin-left: -50px;
     margin-top: -100px;
@@ -43,37 +84,63 @@
     margin-top: -100px;
 }
 
+.left-bottom-npc {
+    position: fixed;
+    top: 70%;
+    left: 15%;
+    margin-top: -100px;
+    cursor: pointer;
+}
+
 .right-top-block {
     position: fixed;
     left:100%;
     cursor: pointer;
     margin-left: -90px;
 }
-
-.mascot{
-    position: fixed;
-    top: 90%;
-    left: 5%;
+.button {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
     cursor: pointer;
+    position: absolute;
+    left:33%;
+}
+
+.button1 {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.testbutton {
+  position: absolute;
+  left: 200px;
+  top: 150px;
+}
+
+.inv-button {
+    background-color: #4caf4f00;
+    border: none;
+    color: white;
+    position: fixed;
+    top: 60%;
+    left: 53%;
+    width: 100px ; 
+    height: 100px; 
     margin-top: -100px;
-}
-
-.PCButton{
-    position: fixed;
     cursor: pointer;
-    height: 10%;
-    width: 13%;
-    top: 53%;
-    left: 55%;
-}
-
-.DoorButton{
-    display: none;
-    position: fixed;
-    height: 90%;
-    width: 80%;
-    top: 8%;
-    left: 13%;
 }
 
 body{
@@ -95,19 +162,6 @@ body{
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
 }
-.snake{
-    display: block;
-    position: absolute;
-    top: 0;
-    border-radius: 5px 10px 10px 10px;
-    border: 5px solid #000 ;
-    margin: 48px 20px 10px 390px;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-}
-
 .popModal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -119,7 +173,7 @@ body{
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(255,255,255,0.4); /* Black w/ opacity */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 .popModalContent{
