@@ -130,7 +130,7 @@
   top: 150px;
 }
 
-.inv-button {
+.inv-button-computer {
     background-color: #4caf4f00;
     border: none;
     color: white;
@@ -138,6 +138,32 @@
     top: 60%;
     left: 53%;
     width: 100px ; 
+    height: 100px; 
+    margin-top: -100px;
+    cursor: pointer;
+}
+
+.inv-button-door {
+    background-color: #4caf4f00;
+    border: none;
+    color: white;
+    position: fixed;
+    top: 40%;
+    left: 77%;
+    width: 230px ; 
+    height: 400px; 
+    margin-top: -100px;
+    cursor: pointer;
+}
+
+.inv-button-unlock {
+    background-color: #4caf4f00;
+    border: none;
+    color: white;
+    position: fixed;
+    top: 62%;
+    left: 45%;
+    width: 400px; 
     height: 100px; 
     margin-top: -100px;
     cursor: pointer;
