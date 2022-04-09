@@ -1,4 +1,5 @@
 
+﻿
 ﻿<!doctype html>
 <!--Code By WebDevTrick (https://webdevtrick.com)-->
 <html lang="en">
@@ -36,10 +37,13 @@
 
 
 	<h3 style="position:absolute; bottom:105px; left: 570px; font-size:250%; font-weight:300;  font-family:'Comic Sans MS'; color:white;text-align: center">SNAKE</h3>
+	<button onclick= "location.href='escape2.html'"; style ="background-color: black; color:white; font-size:250%; position:absolute;padding: 20px 30px; bottom: 300px; left: 1050px; font-family:'Comic Sans MS'" id="yes">Next</button>
 	<button style="background-color: black; color:white; font-size:250%; position:absolute;padding: 20px 30px; bottom: 300px; left: 30px; font-family:'Wingdings 3'" id="L">t</button>
 	<button style="background-color:black; color: white; font-size: 250%; position: absolute;padding: 20px 30px;bottom: 300px;font-family:'Wingdings 3';left: 170px;" id="R">u</button>
 	<button style="background-color:black; color: white; font-size: 250%; position: absolute;padding: 20px 30px; bottom: 410px;font-family:'Wingdings 3'; left: 100px;" id="U">p</button>
 	<button style=" background-color:black; color:white; font-size:250%; position: absolute;padding: 20px 30px;bottom: 190px;left: 100px; font-family:'Wingdings 3'" id="D"> q</button>
+
+	
 	<style>
 		.center {
 			display: block;
@@ -74,7 +78,7 @@
 		highscore = 0;
 
 
-
+		document.getElementById("yes").style.display = 'none';
 		grid = {
 
 			width: null,
@@ -283,6 +287,15 @@
 				if (grid.get(nx, ny) === FRUIT) {
 
 					score++;
+					if (score === 4) {
+
+						document.getElementById("yes").style.display = 'block';
+						const yes = document.getElementById("yes");
+                        yes.addEventListener("click", function () {
+                        });
+						
+					}
+
 					setFood();
 				} else {
 
