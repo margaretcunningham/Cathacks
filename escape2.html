@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+    <title>Escape Room!</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <html>
@@ -73,35 +74,40 @@
 
     <div id = "introduction" class ="popModal" style = "display: none;">
         <div class="left-bottom-npc">
-            <img style = "width: 300px;" src = "npc.png"></img> 
+            <a id="npc">
+                <img style = "width: 50%;" src = "npc.png"></img> 
+            </a> 
         </div>
         <div class="left-center-dialog">
-            <img style = "width: 600px;" src = "dialog.png"></img> 
+            <a id="dialog">
+                <img style = "width: 65%;" src = "dialog.png"></img> 
+            </a> 
         </div>
         <div class="left-center-textbox">
-            <p id = "1"
-                style="font-size:30px">
-                Hello! <br>
-                Welcome to "Escape the Hackathon"! <br>
-                It's the game where you need to pay <br>
-                attention to clues, solve puzzles, <br>
-                and collect items to escape! <br>
-            </p>
-                <p id = "2" style = "display:none ; font-size:27px">
-                    Before we begin, here's a short <br>
-                    introduction to how you can navigate  <br>
-                    the game. First, your inventory is in <br>
-                    the bottom right-hand corner. Click it<br>
-                    and you will see all the items currently <br>
-                    in your inventory. Next, there is a hint <br>
-                    for each level so if you get stuck, click <br>
-                    it for...well...a hint! <br>
+            <a id="textbox">
+                <p id = "1">
+                    Hello! 
+                    Welcome to "Escape the Hackathon"! <br>
+                    It's the game where you need to pay <br>
+                    attention to clues, solve puzzles, <br>
+                    and collect items to escape!<br>
                 </p>
-            <p id = "3" style = "display:none ; font-size:27px">
-                You are now ready to play "Escape <br>
-                the Hackathon." Good Luck! <br>
-            </p>
-            <button onclick= changeText()> Next </button>
+                    <p style = "display: none" id = "2">
+                        Before we begin, here's a short <br>
+                        introduction to how you can navigate  <br>
+                        the game. First, your inventory is in <br>
+                        the bottom right-hand corner. Click it<br>
+                        and you will see all the items currently <br>
+                        in your inventory. Next, there is a hint <br>
+                        for each level so if you get stuck, click <br>
+                        it for...well...a hint! <br>
+                    </p>
+                <p style = "display: none" id = "3">
+                    You are now ready to play "Escape <br>
+                    the Hackathon." Good Luck! <br>
+                </p>
+                <button onclick= changeText()> Next </button>
+            </a> 
         </div>
     </div>
     
