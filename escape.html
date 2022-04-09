@@ -178,7 +178,7 @@
         }
         function enRoom2(){
             PC.style.display = "none";
-            door.style.display = "none";
+            Door.style.display = "none";
         }
         function enRoom3(){
             if (door==1){
@@ -214,8 +214,9 @@
             introModal.style.display = "block";
         }
         PC.onclick = function(){
-            key.style.display = "block";
-            door=1;
+            window.location = "justin.html";
+            // key.style.display = "block";
+            // door=1;
         }
         Door.onclick = function(){
             if (room==3)
