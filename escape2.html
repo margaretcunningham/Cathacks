@@ -46,7 +46,7 @@
     <div id="help" class="popModal">
 
         <div class="popModalContent">
-          <p>That computer over there looks interesting...</p>
+          <p>That door is lookin a little sus...</p>
         </div>
       
     </div>
@@ -111,6 +111,29 @@
         </div>
     </div>
     
+    <div id = "snakeKey" class ="popModal" style = "display: block;">
+        <div class="left-bottom-npc">
+            <a id="npc">
+                <img style = "width: 50%;" src = "npc.png"></img> 
+            </a> 
+        </div>
+        <div class="left-center-dialog">
+            <a id="dialog">
+                <img style = "width: 65%;" src = "dialog.png"></img> 
+            </a> 
+        </div>
+        <div class="left-center-textbox">
+            <a id="textbox">
+                <p>
+                    Congradulations!!<br>
+                    You finished the snake game and got your first key!<br>
+                    I wonder where that could go...
+                </p>
+                <button onclick= changeKeyText()> Next </button>
+            </a> 
+        </div>
+    </div>
+
     <script>
         var room = 1;
         var door =1;
@@ -125,6 +148,7 @@
         var helpModal = document.getElementById("help");
         var hintModal = document.getElementById("hint");
         var introModal = document.getElementById("introduction");
+        var snakeKeyModal = document.getElementById("snakeKey");
         var key = document.getElementById("key");
         var stat=1;
         var p1 = document.getElementById("1");
@@ -155,6 +179,9 @@
             }
             prev.style.display="none";
             next.style.display="inline";
+        }
+        function changeKeyText(){
+            snakeKeyModal.style.display = "none";
         }
         function roomChange(){
             switch (room){
