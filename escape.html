@@ -70,6 +70,40 @@
         <a id="PCBtn">
         </a>  
     </div>
+
+    <div id = "introduction" class ="popModal" style = "display: block;">
+        <div class="left-bottom-npc">
+            <img style = "width: 300px;" src = "npc.png"></img> 
+        </div>
+        <div class="left-center-dialog">
+            <img style = "width: 600px;" src = "dialog.png"></img> 
+        </div>
+        <div class="left-center-textbox">
+            <p id = "1"
+                style="font-size:30px">
+                Hello! <br>
+                Welcome to "Escape the Hackathon"! <br>
+                It's the game where you need to pay <br>
+                attention to clues, solve puzzles, <br>
+                and collect items to escape! <br>
+            </p>
+                <p id = "2" style = "display:none ; font-size:27px">
+                    Before we begin, here's a short <br>
+                    introduction to how you can navigate  <br>
+                    the game. First, your inventory is in <br>
+                    the bottom right-hand corner. Click it<br>
+                    and you will see all the items currently <br>
+                    in your inventory. Next, there is a hint <br>
+                    for each level so if you get stuck, click <br>
+                    it for...well...a hint! <br>
+                </p>
+            <p id = "3" style = "display:none ; font-size:27px">
+                You are now ready to play "Escape <br>
+                the Hackathon." Good Luck! <br>
+            </p>
+            <button onclick= changeText()> Next </button>
+        </div>
+    </div>
     
     <script>
         var room = 1;
@@ -84,7 +118,38 @@
         var invModal = document.getElementById("inventory");
         var helpModal = document.getElementById("help");
         var hintModal = document.getElementById("hint");
+        var introModal = document.getElementById("introduction");
         var key = document.getElementById("key");
+        var stat=1;
+        var p1 = document.getElementById("1");
+        var p2 = document.getElementById("2");
+        var p3 = document.getElementById("3");
+        var npc= document.getElementById("npc");
+        var dialog= document.getElementById("dialog");
+        var textbox= document.getElementById("textbox");
+        function changeText(){
+            var prev;
+            var next;
+            switch (stat){
+                case 1: 
+                    prev =p1;
+                    next=p2;
+                    stat++;
+                    break;
+
+                case 2: 
+                    prev =p2;
+                    next=p3;
+                    stat++;
+                    break;
+                
+                case 3:
+                    introModal.style.display = "none";
+
+            }
+            prev.style.display="none";
+            next.style.display="inline";
+        }
         function roomChange(){
             switch (room){
                 case 1: 
@@ -143,7 +208,10 @@
             helpModal.style.display = "block";
         }
         hint.onclick = function() {
-            hintModal.style.display = "block";
+            stat=1;
+            p1.style.display = "inline";
+            p3.style.display = "none";
+            introModal.style.display = "block";
         }
         PC.onclick = function(){
             key.style.display = "block";
