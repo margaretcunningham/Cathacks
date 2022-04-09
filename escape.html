@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<html>
+<body>
+    <div id="mainRoom" class = "mainModal">
+        <button id="myBtn" class="button button1 testbutton">Pop Up Modal</button>
+    </div> 
+
+    <div id="secondRoom" class = "secondModal">
+        <button id="secondBtn" class="button button1 testbutton">Main Room</button>
+    </div> 
+
+    <div id="myModal" class="testModal">
+
+        <div class="testModalContent">
+          <span class="close">&times;</span>
+          <p>Some text in the Modal..</p>
+          <button id = "modalButton" class="button1">BEGIN!</button>
+        </div>
+      
+      </div>
+
+    <script>
+        var modal1 = document.getElementById("myModal");
+        var modal2 = document.getElementById("mainRoom");
+        var modal3 = document.getElementById("secondRoom");
+        var btn1 = document.getElementById("myBtn");
+        var btn2 = document.getElementById("modalButton");
+        var btn3 = document.getElementById("secondBtn");
+        var span = document.getElementsByClassName("close")[0];
+        btn1.onclick = function() {
+            modal1.style.display = "block";
+        }
+        btn2.onclick = function() {
+            modal2.style.display = "none";
+            modal3.style.display = "block";
+            modal1.style.display = "none";
+        }
+        btn3.onclick = function() {
+            modal3.style.display = "none";
+            modal2.style.display = "block";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal1) {
+                modal1.style.display = "none";
+            }
+        }
+        span.onclick = function() {
+            modal1.style.display = "none";
+        }
+    </script>
+</body>
+</html>
