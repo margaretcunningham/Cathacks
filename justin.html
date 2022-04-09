@@ -1,3 +1,4 @@
+
 ﻿<!doctype html>
 <!--Code By WebDevTrick (https://webdevtrick.com)-->
 <html lang="en">
@@ -13,18 +14,32 @@
 			top: 0;
 			border-radius: 5px 10px 10px 10px;
 			border: 5px solid #000 ;
-			margin: 45px 20px 10px 395px;
+			margin: 48px 20px 10px 390px;
 			top: 0;
 			bottom: 0;
 			right: 0;
 			left: 0;
 		}
+		
 	</style>
 </head>
-<body bgcolor ="#000">
+<body bgcolor="#000">
 	<img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/2-arcade-machine-screen-allan-swart.jpg"
 		 class="center"
 		 style="width:1000px; height:600px;" />
+	<h3 style="position:absolute; bottom:500px; left: 970px; font-size:250%; font-weight:300;  font-family:'Comic Sans MS'; color:white;text-align: center">Score:</h3>
+	<h3 style="position:absolute; bottom:500px; left: 1090px; font-size:250%; font-weight:300;  font-family:'Comic Sans MS'; color:white;text-align: center" id="Score"></h3>
+	<h3 style="position:absolute; bottom:450px; left: 970px; font-size:250%; font-weight:300;  font-family:'Comic Sans MS'; color:white;text-align: center">Last Game:</h3>
+	<h3 style="position:absolute; bottom:450px; left: 1175px; font-size:250%; font-weight:300;  font-family:'Comic Sans MS'; color:white;text-align: center" id="OldScore"></h3>
+	<h3 style="position:absolute; bottom:400px; left: 970px; font-size:250%; font-weight:300;  font-family:'Comic Sans MS'; color:white;text-align: center">HighScore:</h3>
+	<h3 style="position:absolute; bottom:400px; left: 1175px; font-size:250%; font-weight:300;  font-family:'Comic Sans MS'; color:white;text-align: center" id="HighScore"></h3>
+
+
+	<h3 style="position:absolute; bottom:105px; left: 570px; font-size:250%; font-weight:300;  font-family:'Comic Sans MS'; color:white;text-align: center">SNAKE</h3>
+	<button style="background-color: black; color:white; font-size:250%; position:absolute;padding: 20px 30px; bottom: 300px; left: 30px; font-family:'Wingdings 3'" id="L">t</button>
+	<button style="background-color:black; color: white; font-size: 250%; position: absolute;padding: 20px 30px;bottom: 300px;font-family:'Wingdings 3';left: 170px;" id="R">u</button>
+	<button style="background-color:black; color: white; font-size: 250%; position: absolute;padding: 20px 30px; bottom: 410px;font-family:'Wingdings 3'; left: 100px;" id="U">p</button>
+	<button style=" background-color:black; color:white; font-size:250%; position: absolute;padding: 20px 30px;bottom: 190px;left: 100px; font-family:'Wingdings 3'" id="D"> q</button>
 	<style>
 		.center {
 			display: block;
@@ -53,7 +68,12 @@
 			ctx,
 			keystate,
 			frames,
-			score;
+			score,
+			but = " ";
+		oldscore = 0;
+		highscore = 0;
+
+
 
 		grid = {
 
@@ -133,7 +153,6 @@
 
 
 		function main() {
-
 			canvas = document.createElement("canvas");
 			canvas.width = COLS * 20;
 			canvas.height = ROWS * 20;
@@ -154,6 +173,23 @@
 				delete keystate[evt.keyCode];
 			});
 
+			const l = document.getElementById("L");
+			l.addEventListener("click", function () {
+				but = "left";
+			});
+			const r = document.getElementById("R");
+			r.addEventListener("click", function () {
+				but = "right";
+			});
+			const u = document.getElementById("U");
+			u.addEventListener("click", function () {
+				but = "up";
+			});
+			const d = document.getElementById("D");
+			d.addEventListener("click", function () {
+				but = "down";
+			});
+
 
 			init();
 			loop();
@@ -161,6 +197,8 @@
 
 
 		function init() {
+			if (score > highscore) { highscore = score; }
+			oldscore = score;
 			score = 0;
 
 			grid.init(EMPTY, COLS, ROWS);
@@ -178,12 +216,26 @@
 			draw();
 
 			window.requestAnimationFrame(loop, canvas);
+
 		}
 
 
 		function update() {
 			frames++;
 
+
+			if (but === "left" && snake.direction !== RIGHT) {
+				snake.direction = LEFT;
+			}
+			if (but === "up" && snake.direction !== DOWN) {
+				snake.direction = UP;
+			}
+			if (but === "right" && snake.direction !== LEFT) {
+				snake.direction = RIGHT;
+			}
+			if (but === "down" && snake.direction !== UP) {
+				snake.direction = DOWN;
+			}
 
 			if (keystate[KEY_LEFT] && snake.direction !== RIGHT) {
 				snake.direction = LEFT;
@@ -240,6 +292,7 @@
 
 				grid.set(SNAKE, nx, ny);
 				snake.insert(nx, ny);
+				but = " ";
 			}
 		}
 
@@ -267,13 +320,15 @@
 				}
 			}
 
-			ctx.fillStyle = "#000";
-			ctx.fillText("SCORE: " + score, 10, canvas.height - 10);
+
+			document.getElementById("Score").innerHTML = score;
+			if (oldscore >= 0) { document.getElementById("OldScore").innerHTML = oldscore; }
+			if (oldscore >= 0) { document.getElementById("HighScore").innerHTML = highscore; }
+
 		}
 
 
 		main();
 	</script>
-	<h3 style="position:relative; bottom:200px;font-size:250%; font-family:'Comic Sans MS'; color:white;text-align: center">SNAKE</h3>
 </body>
 </html>
