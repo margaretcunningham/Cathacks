@@ -84,6 +84,15 @@
     margin-top: -100px;
 }
 
+.box-block{
+    position:fixed;
+    cursor:pointer;
+    height:10%;
+    width:13%;
+    top:52%;
+    left:13%;
+}
+
 .right-bottom-block {
     position: fixed;
     top: 100%;
@@ -226,6 +235,14 @@ body{
     width: 80%;
 }
 
+.modalContentEgg{
+    background-color:black;
+    margin:auto;
+    padding:5px;
+    border:1px solid #888;
+    width:100%;
+}
+
 .close {
     color: #aaaaaa;
     float: right;
@@ -239,4 +256,3 @@ body{
     text-decoration: none;
     cursor: pointer;
 }
-

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet2" href="confetti.css">
+<style>
+    body {
+        background-image: url(image2.jpeg)
+    }
+
+</style>
+
+<div class="box-block"> 
+    <a id="easterEggBtn">
+        <img style = "width: 30px;" src = "easteregg.png"></img>   
+     </a>
+</div>
+
+<div id="easterEgg" class="popModal">
+
+    <div class="modalContentEgg">
+      <p style = "font-family: Courier New; font-size:30px; color: white" > Congrats! You found the block! You get confetti </p>
+    </div>
+  
+</div>
+
+<body>
+   
+    <script src="confetti.js"></script>
+    <!-- Confetti  JS-->
+    <script>
+
+        // start
+
+        const start = () => {
+            setTimeout(function() {
+                confetti.start()
+            }, 500); 
+        };
+
+        //  Stop
+
+        const stop = () => {
+            setTimeout(function() {
+                confetti.stop()
+            }, 1000);  
+        };
+    </script>
+</body>
+
+<script>
+     var easterEgg = document.getElementById("easterEggBtn");
+     var easterEggModal = document.getElementById("easterEgg");
+     easterEgg.onclick = function() {
+            easterEggModal.style.display = "block";
+            start();
+        }
+
+        window.onclick = function(event) {
+            if (event.target == easterEggModal) {
+                easterEggModal.style.display = "none";
+                start();
+                stop();
+            } 
+        }
+
+
+
+</script>
+
+
+
+
+  
