@@ -87,10 +87,10 @@
 .left-center-textbox {
     position: absolute;
     z-index: 1; /* Sit on top */
-    top: 40%;
+    top: 35%;
     left: 40%;
     margin-top: -100px;
-    font-size: 20pt;
+    font-size: 17pt;
     cursor: pointer;
 }
 
