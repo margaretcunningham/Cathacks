@@ -257,7 +257,7 @@
                 case 5: 
                     if (cups==0)
                         document.body.style.backgroundImage = "url('IMG_3463.jpg')";
-                    else not
+                    else
                         document.body.style.backgroundImage = "url('IMG_3466.jpg')";
                     CupStack.style.display="none";
                     Tetris.style.display="block";
@@ -361,17 +361,15 @@
             if (event.target == hintModal) {
                 hintModal.style.display = "none";
             }
-        }
-        easterEgg.onclick = function() {
-            easterEggModal.style.display = "block";
-            start();
-        }
-        window.onclick = function(event) {
             if (event.target == easterEggModal) {
                 easterEggModal.style.display = "none";
                 start();
                 stop();
             } 
+        }
+        easterEgg.onclick = function() {
+            easterEggModal.style.display = "block";
+            start();
         }
 
     </script>
