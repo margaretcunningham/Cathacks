@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <head>
     <title>Escape Room!</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+.DoorButton{
+    display: block;
+    position: fixed;
+    cursor: pointer;
+    height: 90%;
+    width: 80%;
+    top: 8%;
+    left: 13%;
+}
+body{
+    background: url(IMG_3468.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+</style>
 <html>
-<body style="background-image: url('arcade.jpeg');">
-    <div class="exitDoor">
+<body>
+    <div id="Door" class = "DoorButton">
     </div>
-    
-        
 
+    
+
+    <script>
+        var dooropen=0;
+        var Door = document.getElementById("Door");
+        
+        Door.onclick = function(){
+            document.body.style.backgroundImage = "url('IMG_3469.jpg')";
+            if (dooropen==1){
+                window.location = "exit.html";
+            }
+            dooropen=1;
+        }
+    </script>
 </body>
-</html>
