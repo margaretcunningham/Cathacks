@@ -32,6 +32,34 @@
     top: 8%;
     left: 13%;
 }
+.CupsButton{
+    display: none;
+    position: fixed;
+    cursor: pointer;
+    height: 20%;
+    width: 10%;
+    top: 63%;
+    left: 77%;
+}
+.CupStack{
+    display: none;
+    position: fixed;
+    cursor: pointer;
+    height: 90%;
+    width: 80%;
+    top: 8%;
+    left: 13%;
+}
+.Tet{
+    display: none;
+    position: fixed;
+    cursor: pointer;
+    height: 30%;
+    width: 20%;
+    top: 45%;
+    left: 20%;
+    background-color: green;
+}
 .PCButton{
     position: fixed;
     cursor: pointer;
