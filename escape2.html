@@ -64,13 +64,18 @@
     </div>
 
     <div id="Door" class = "DoorButton">
-        <a id="DoorBtn">
-        </a>  
     </div>
 
     <div id="PC" class = "PCButton">
-        <a id="PCBtn">
-        </a>  
+    </div>
+
+    <div id="Cups" class = "CupsButton">
+    </div>
+
+    <div id="CupStack" class = "CupStack">
+    </div>
+
+    <div id="Tet" class = "Tet">
     </div>
 
     <div id = "introduction" class ="popModal" style = "display: none;">
@@ -171,8 +176,10 @@
     </script>
 
     <script>
+        var cups=0;
         var room = 1;
         var door =1;
+        var dooropen=0;
         var left = document.getElementById("leftBtn");
         var right = document.getElementById("rightBtn");
         var inv = document.getElementById("inventoryBtn");
@@ -180,6 +187,9 @@
         var hint = document.getElementById("hintBtn");
         var PC = document.getElementById("PC");
         var Door = document.getElementById("Door");
+        var Cups = document.getElementById("Cups");
+        var Tetris = document.getElementById("Tet");
+        var CupStack = document.getElementById("CupStack");
         var invModal = document.getElementById("inventory");
         var helpModal = document.getElementById("help");
         var hintModal = document.getElementById("hint");
@@ -240,7 +250,31 @@
 
                 case 4:
                     document.body.style.backgroundImage = "url('image0.jpeg')";
+                    Tetris.style.display="none";
                     enRoom4();
+                    break;
+
+                case 5: 
+                    if (cups==0)
+                        document.body.style.backgroundImage = "url('IMG_3463.jpg')";
+                    else
+                        document.body.style.backgroundImage = "url('IMG_3466.jpg')";
+                    CupStack.style.display="none";
+                    Tetris.style.display="block";
+                    enRoom5();
+                    break;
+
+                case 6:
+                    Tetris.style.display="none";
+                    if (cups==0){
+                        document.body.style.backgroundImage = "url('IMG_3459.jpg')";
+                        CupStack.style.display="block";
+                    }
+                    else {
+                        document.body.style.backgroundImage = "url('IMG_3462.jpg')";
+                        CupStack.style.display="none";
+                    }
+                    enRoom6();
                     break;
             }
         }
@@ -260,7 +294,16 @@
             }
         }
         function enRoom4(){
-            door.style.display = "none";
+            Door.style.display = "block";
+            Door.style.cursor = "pointer";
+            Cups.style.display = "none";
+        }
+        function enRoom5(){
+            Door.style.display = "none";
+            Cups.style.display = "block";
+        }
+        function enRoom6(){
+            Cups.style.display = "none";
         }
         left.onclick = function() {
             if (room>1){
@@ -269,7 +312,7 @@
             }
         }
         right.onclick = function() {
-            if (room<3){
+            if ((room<3||dooropen==1)&&room<=4){
                 room++;
                 roomChange();
             }
@@ -287,13 +330,26 @@
             introModal.style.display = "block";
         }
         PC.onclick = function(){
-            key.style.display = "block";
-            door=1;
+            window.location = "justin.html";
         }
         Door.onclick = function(){
-            if (room==3)
+            if (room==3||room==4)
                 room++;
+
             roomChange();
+            key.style.display = "none";
+            dooropen =1;
+        }
+        Cups.onclick = function(){
+            room++;
+            roomChange();
+        }
+        CupStack.onclick = function(){
+            cups=1;
+            roomChange();
+        }
+        Tetris.onclick = function(){
+            window.location = "tetris.html";
         }
         window.onclick = function(event) {
             if (event.target == invModal) {
@@ -305,17 +361,15 @@
             if (event.target == hintModal) {
                 hintModal.style.display = "none";
             }
-        }
-        easterEgg.onclick = function() {
-            easterEggModal.style.display = "block";
-            start();
-        }
-        window.onclick = function(event) {
             if (event.target == easterEggModal) {
                 easterEggModal.style.display = "none";
                 start();
                 stop();
             } 
+        }
+        easterEgg.onclick = function() {
+            easterEggModal.style.display = "block";
+            start();
         }
 
     </script>
