@@ -32,6 +32,15 @@
     top: 8%;
     left: 13%;
 }
+.exitDoor{
+    display: block;
+    position: fixed;
+    cursor: pointer;
+    height: 90%;
+    width: 80%;
+    top: 8%;
+    left: 13%;
+}
 .CupsButton{
     display: none;
     position: fixed;
