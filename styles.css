@@ -121,6 +121,7 @@
 }
 
 .box-block{
+    display: none;
     position:fixed;
     cursor:pointer;
     height:10%;
