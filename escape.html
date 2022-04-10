@@ -134,7 +134,14 @@
         var npc= document.getElementById("npc");
         var dialog= document.getElementById("dialog");
         var textbox= document.getElementById("textbox");
+        var nextCount = 0;
+        
         function changeText(){
+            nextCount = nextCount + 1;
+            if (nextCount == 3){
+                var backgroundMusic = new Audio("backgroundMusic.mp3");
+                backgroundMusic.play();
+            }
             var prev;
             var next;
             switch (stat){

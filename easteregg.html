@@ -10,6 +10,7 @@
 
 </style>
 
+
 <div class="box-block"> 
     <a id="easterEggBtn">
         <img style = "width: 30px;" src = "easteregg.png"></img>   
@@ -48,22 +49,25 @@
     </script>
 </body>
 
+
 <script>
+
+    var sound = new Audio("applause.mp3");
      var easterEgg = document.getElementById("easterEggBtn");
      var easterEggModal = document.getElementById("easterEgg");
+
      easterEgg.onclick = function() {
             easterEggModal.style.display = "block";
             start();
+            sound.play();
         }
 
         window.onclick = function(event) {
             if (event.target == easterEggModal) {
                 easterEggModal.style.display = "none";
-                start();
                 stop();
             } 
         }
-
 
 
 </script>
