@@ -7,12 +7,12 @@
 <body>
     <div class="left-center-block">
         <a id="leftBtn">
-            <img style = "width: 30px;" src = "pointLeft.png"  ></img> 
+            <img style = "width: 70px;" src = "pointLeft.png"  ></img> 
         </a> 
     </div>
     <div class="right-center-block"> 
         <a id="rightBtn">
-            <img style = "width: 30px;" src = "pointRight.png"></img> 
+            <img style = "width: 70px;" src = "pointRight.png"></img> 
         </a>  
     </div>
 
@@ -214,44 +214,42 @@
                 case 1: 
                     document.body.style.backgroundImage = "url('image3.jpeg')";
                     easterEgg.style.display="none";
-                    right.style.display = "block";
-                    left.style.display = "none";
                     enRoom1();
                     break;
 
                 case 2:
                     document.body.style.backgroundImage = "url('image2.jpeg')";
                     easterEgg.style.display="inline";
-                    right.style.display = "block";
-                    left.style.display = "block";
                     enRoom2();
                     break;
 
                 case 3: 
                     document.body.style.backgroundImage = "url('image1.jpeg')";
                     easterEgg.style.display="none";
-                    right.style.display = "none";
-                    left.style.display = "block";
                     enRoom3();
                     break;
 
                 case 4:
                     document.body.style.backgroundImage = "url('image0.jpeg')";
-                    right.style.display = "none";
-                    left.style.display = "block";
                     enRoom4();
                     break;
             }
         }
         function enRoom1(){
             PC.style.display = "block";
+            right.style.display = "block";
+            left.style.display = "none";
         }
         function enRoom2(){
             PC.style.display = "none";
             Door.style.display = "none";
             easterEggBtn.style.display = "block";
+            right.style.display = "block";
+            left.style.display = "block";
         }
         function enRoom3(){
+            right.style.display = "none";
+            left.style.display = "block";
             if (door==1){
                 Door.style.display = "block";
                 Door.style.cursor = "pointer";
@@ -260,6 +258,8 @@
         }
         function enRoom4(){
             door.style.display = "none";
+            right.style.display = "none";
+            left.style.display = "block";
         }
         left.onclick = function() {
             if (room>1){

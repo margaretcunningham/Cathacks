@@ -8,12 +8,12 @@
 <body>
     <div class="left-center-block">
         <a id="leftBtn">
-            <img style = "width: 30px;" src = "pointLeft.png"></img> 
+            <img style = "width: 70px;" src = "pointLeft.png"></img> 
         </a> 
     </div>
     <div class="right-center-block"> 
         <a id="rightBtn">
-            <img style = "width: 30px;" src = "pointRight.png"></img> 
+            <img style = "width: 70px;" src = "pointRight.png"></img> 
         </a>  
     </div>
 
@@ -281,13 +281,20 @@
         }
         function enRoom1(){
             PC.style.display = "block";
+            right.style.display = "block";
+            left.style.display = "none";
+            easterEggBtn.style.display = "none";
         }
         function enRoom2(){
             PC.style.display = "none";
             Door.style.display = "none";
             easterEggBtn.style.display = "block";
+            right.style.display = "block";
+            left.style.display = "block";
         }
         function enRoom3(){
+            right.style.display = "none";
+            left.style.display = "block";
             if (door==1){
                 Door.style.display = "block";
                 Door.style.cursor = "pointer";
@@ -298,6 +305,8 @@
             Door.style.display = "block";
             Door.style.cursor = "pointer";
             Cups.style.display = "none";
+            right.style.display = "none";
+            left.style.display = "block";
         }
         function enRoom5(){
             Door.style.display = "none";

@@ -79,7 +79,7 @@
 
 .left-center-block {
     position: fixed;
-    top: 50%;
+    top: 57%;
     margin-top: -100px;
     cursor: pointer;
 }
@@ -104,8 +104,8 @@
 
 .right-center-block {
     position: fixed;
-    top: 50%;
-    left:100%;
+    top: 57%;
+    left:98%;
     cursor: pointer;
     margin-left: -50px;
     margin-top: -100px;
