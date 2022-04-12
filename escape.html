@@ -7,7 +7,7 @@
 <body>
     <div class="left-center-block">
         <a id="leftBtn">
-            <img style = "width: 30px;" src = "pointLeft.png"></img> 
+            <img style = "width: 30px;" src = "pointLeft.png"  ></img> 
         </a> 
     </div>
     <div class="right-center-block"> 
@@ -24,13 +24,13 @@
 
     <div class="right-top-block"> 
         <a id="helpBtn">
-            <img style = "width: 90px;" src = "helpIcon.png"></img> 
+            <img style = "width: 90px;" src = "hintIcon.png"></img> 
         </a>  
     </div>
 
     <div class="left-bottom-block"> 
         <a id="hintBtn">
-            <img style = "width: 90px;" src = "hintIcon.png"></img> 
+            <img style = "width: 90px;" src = "helpIcon.png"></img> 
         </a>  
     </div>
 
@@ -214,23 +214,31 @@
                 case 1: 
                     document.body.style.backgroundImage = "url('image3.jpeg')";
                     easterEgg.style.display="none";
+                    right.style.display = "block";
+                    left.style.display = "none";
                     enRoom1();
                     break;
 
                 case 2:
                     document.body.style.backgroundImage = "url('image2.jpeg')";
                     easterEgg.style.display="inline";
+                    right.style.display = "block";
+                    left.style.display = "block";
                     enRoom2();
                     break;
 
                 case 3: 
                     document.body.style.backgroundImage = "url('image1.jpeg')";
                     easterEgg.style.display="none";
+                    right.style.display = "none";
+                    left.style.display = "block";
                     enRoom3();
                     break;
 
                 case 4:
                     document.body.style.backgroundImage = "url('image0.jpeg')";
+                    right.style.display = "none";
+                    left.style.display = "block";
                     enRoom4();
                     break;
             }
