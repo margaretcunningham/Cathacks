@@ -30,7 +30,10 @@ body{
     <script>
         var dooropen=0;
         var Door = document.getElementById("Door");
+        var backgroundMusic = new Audio("backgroundMusic.mp3");
         
+        backgroundMusic.play();
+
         Door.onclick = function(){
             document.body.style.backgroundImage = "url('IMG_3469.jpeg')";
             if (dooropen==1){
