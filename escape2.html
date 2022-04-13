@@ -19,19 +19,19 @@
 
     <div class="right-bottom-block"> 
         <a id="inventoryBtn">
-            <img style = "width: 90px;" src = "box (1).png"></img> 
+            <img style = "width: 110px;" src = "inventory.png"></img> 
         </a>  
     </div>
-
+    
     <div class="right-top-block"> 
         <a id="helpBtn">
-            <img style = "width: 90px;" src = "helpIcon.png"></img> 
+            <img style = "width: 100px;" src = "bulb.png"></img> 
         </a>  
     </div>
 
     <div class="left-bottom-block"> 
         <a id="hintBtn">
-            <img style = "width: 90px;" src = "hintIcon.png"></img> 
+            <img style = "width: 90px;" src = "helpIcon.png"></img> 
         </a>  
     </div>
 
@@ -39,7 +39,7 @@
     <div id="inventory" class="popModal">
 
         <div class="center-block">
-          <img id = "key" style = "display: block;width: 100%;" src = "key.png"></img> 
+          <img id = "key" style = "display: block; width: 60%" src = "newKey.png"></img> 
         </div>
       
     </div>
@@ -197,6 +197,7 @@
         var snakeKeyModal = document.getElementById("snakeKey");
         var key = document.getElementById("key");
         var stat=1;
+        var nextCount = 0;
         var p1 = document.getElementById("1");
         var p2 = document.getElementById("2");
         var p3 = document.getElementById("3");
@@ -230,6 +231,8 @@
             next.style.display="inline";
         }
         function changeKeyText(){
+            var backgroundMusic = new Audio("backgroundMusic.mp3");
+            backgroundMusic.play();
             snakeKeyModal.style.display = "none";
         }
         function roomChange(){

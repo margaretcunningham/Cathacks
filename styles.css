@@ -12,11 +12,22 @@
 .arcade {
     background-image: url("arcade.jpeg");
 }
+.menu-block {
+    height: 200px;
+    width: 290px;
+    border-style: solid;
+    background-color: rgb(189, 189, 189);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -130px;
+}
 .center-block {
     height: 200px;
     width: 290px;
     border-style: solid;
-    background-color: grey;
+    background-color: rgb(89, 65, 1);
     border-color:black;
     position: fixed;
     top: 50%;
@@ -133,7 +144,7 @@
 .right-bottom-block {
     position: fixed;
     top: 100%;
-    left:100%;
+    left:98%;
     cursor: pointer;
     margin-left: -90px;
     margin-top: -100px;
@@ -156,10 +167,11 @@
 
 .right-top-block {
     position: fixed;
-    left:100%;
+    left:99%;
     cursor: pointer;
     margin-left: -90px;
 }
+
 .button {
     border: none;
     color: white;
